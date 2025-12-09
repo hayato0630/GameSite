@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>ご注文内容確認 | 【幻想世界域】</title>
+	    <link rel="stylesheet" href="dezain_n.css">
+	    
+	    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	    <meta http-equiv="Pragma" content="no-cache">
+	    <meta http-equiv="Expires" content="0">
+	    
+	</head>
+<body>
+
+    <header class="header">
+        </header>
+
+    <main class="main-content">
+
+		        <section class="section store-hero">
+
+		            <h1>物件貯蔵地</h1>
+
+		            <p>偉大なる冒険旅に役立ちし遊戯内部貨幣や、最も有利な組合を紹介します。</p>
+
+					<p class="sale-now blink-effect">🔥 **現在限度！五割の価格で迅速に購買せよ！** 🔥</p> </section>
+
+
+
+					<section class="section currency-store">
+					        <h2>🔏 遊戯内部貨幣の購買</h2>
+					        <div class="item-grid currency-grid">
+					            
+					            <div class="item-card" data-id="stone_s" data-name="魔法石パック (小)" data-price="300"> <img src="images/buru-to.png" width="250" alt="小パック">
+					                <h3>ブルートフォース攻撃</h3>
+					                
+					                <p class="price discounted-price"><span class="original-price">¥ 650 →</span> ¥ 300</p>
+					                <a href="#" class="btn-buy purchase-link cta-flash">即時購入せよ！</a>
+					                <p class="bonus bonus-urgent">🚨 **初回限定！** 🚨</p>
+					            </div>
+
+					            <div class="item-card" data-id="stone_m" data-name="魔法石パック (中)" data-price="750"> <img src="images/sql.png" width="250" alt="中パック">
+					                <h3>SQLインジェクション攻撃</h3>
+					                
+					                <p class="price discounted-price"><span class="original-price">¥ 1,500 →</span> ¥ 750</p>
+					                <a href="#" class="btn-buy purchase-link cta-flash">即時購入せよ！</a>
+					                <p class="bonus bonus-urgent">期限迫る！</p>
+					            </div>
+
+					            
+					            <div class="item-card recommended super-deal-card" data-id="stone_l" data-name="魔法石パック (特大)" data-price="2900"> <p class="super-sale-badge">💥 **期間限定の至高特価！** 💥</p>
+					                <img src="images/kurosu.png" width="250" alt="大パック">
+					                <h3>クロスサイトスクリプティング</h3>
+					                
+					                <p class="price discounted-price super-price"><span class="original-price">¥ 5,800 →</span> ¥ 2,900</p>
+					                <a href="#" class="btn-buy purchase-link cta-flash super-cta">今すぐ取得せよ！</a>
+					            </div>
+
+					        </div>
+					    </section>
+
+					    <section class="section limited-items">
+					        <h2>⭐ 期間限度・最も有利な組合</h2>
+					        <div class="item-grid package-grid">
+					            
+					            <div class="item-card package-hot" data-id="pass_v1" data-name="先生の全知識" data-price="1500"> <h3>先生の全知識</h3>
+					                <p>限定スキルと大量なる知識を入手！</p>					                <p class="price discounted-price"><span class="original-price">¥ 3,000 →</span> ¥ 1,500</p>
+					                <a href="#" class="btn-buy purchase-link cta-flash">即時購入せよ！</a>
+					            </div>
+
+					        </div>
+					    </section>
+        
+        <section class="section legal-info">
+            <h2>ご購入に関する注意事項</h2>
+            <ul>
+                <li>※遊戯内部通貨は、貴方が購入確定した所属する平台でのみ利用可能です。</li>
+                <li>※購買完了後の退還（返品）や交換は、基本原理により受諾を拒否致します。</li>
+                <li><a href="tokushoho.html">特定商業交易法依拠の示記</a>を一定確認為さるべし。</li>
+            </ul>
+        </section>
+    </main>
+
+	<footer class="footer">
+	        </footer>
+	    
+	    <script>
+	        document.addEventListener('DOMContentLoaded', () => {
+	            // すべての「購入する」ボタンに付与したクラスを取得
+	            const purchaseLinks = document.querySelectorAll('.purchase-link');
+
+	            purchaseLinks.forEach(link => {
+	                link.addEventListener('click', (event) => {
+	                    event.preventDefault(); // リンクのデフォルト動作を停止
+
+	                    // クリックされたボタンの親要素（.item-card）からアイテムデータを取得
+	                    const card = event.currentTarget.closest('.item-card');
+	                    if (!card) return;
+
+	                    const itemId = card.dataset.id;
+	                    const itemName = card.dataset.name;
+	                    const itemPrice = card.dataset.price;
+
+	                    // 取得したデータをURLのクエリパラメータとして整形
+	                    const queryString = new URLSearchParams({
+	                        id: itemId,
+	                        name: itemName,
+	                        price: itemPrice
+	                    }).toString();
+
+	                    // checkout.htmlへパラメータ付きで遷移
+	                    window.location.href = `checkout_n.jsp?${queryString}`;
+	                });
+	            });
+	        });
+	    </script>
+	</body>
+</html>

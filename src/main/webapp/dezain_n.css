@@ -1,0 +1,504 @@
+@charset "UTF-8";
+/* リセットCSSの代わり */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: sans-serif; /* 実際のフォントに置き換えます */
+    background-color: #0d0d0d; /* 暗めの背景で重厚感を演出 */
+    color: #f0f0f0; /* 明るいテキストカラー */
+}
+
+a {
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 1. ヘッダー */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed; /* 常に画面上部に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* 他の要素より手前に表示 */
+    background: rgba(13, 13, 13, 0.8); /* 半透明の背景でメインビジュアルが見えるように */
+}
+
+.header h1 a {
+    font-size: 24px;
+    /* ロゴのデザインに合わせたフォントや装飾を追加 */
+}
+
+.g-nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.g-nav .cta a {
+    background-color: #cc0000; /* CTAボタンの強調色 */
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* 2. メインビジュアル */
+.hero {
+    height: 100vh; /* 画面いっぱいに表示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/main_visual.jpg'); /* ここにキービジュアル画像を設定 */
+    background-size: cover;
+    background-position: center;
+    /* 背景を暗くするオーバーレイなどを追加すると、テキストが見やすくなります */
+}
+
+.hero-content {
+    position: relative; /* 背景より手前に表示 */
+    text-align: center;
+    z-index: 50;
+}
+
+.hero-content h2 {
+    font-size: 64px;
+    margin-bottom: 10px;
+    /* フォントや影などで世界観を強調 */
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 15px 40px;
+    margin-top: 30px;
+    background-color: #ffaa00; /* 強いアクセントカラー */
+    color: #1a1a1a;
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+/* 3. メインコンテンツ */
+.main-content {
+    padding: 80px 40px;
+    max-width: 1200px; /* 最大幅を設定 */
+    margin: 0 auto;
+}
+
+.section {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    /* タイトルの装飾（例：世界観に合わせたボーダーや影） */
+}
+
+/* NEWSセクション */
+.news-list {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    border-top: 1px solid #333;
+}
+
+.news-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+
+.news-list .date {
+    margin-right: 15px;
+    color: #aaa;
+}
+
+.news-list .category {
+    margin-right: 15px;
+    color: #ffaa00; /* アクセントカラーを使用 */
+}
+
+/* INTRODUCEセクション */
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.intro-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* 4. フッター */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #1a1a1a;
+    font-size: 14px;
+    border-top: 1px solid #333;
+}
+
+.footer-links a {
+    margin: 0 10px;
+}
+
+.currency-store, .limited-items {
+    padding-top: 50px;
+    border-top: 1px solid #222;
+}
+
+.currency-store h2, .limited-items h2 {
+    color: #ffaa00; /* アクセントカラー */
+}
+
+/* アイテムグリッドのレイアウト */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* レスポンシブ対応 */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* アイテムカードのスタイル */
+.item-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.item-card img {
+    /*max-width: 100px;*/
+    margin-bottom: 20px;
+}
+
+.item-card h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.item-card .price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00ccff; /* 価格を際立たせる色 */
+    margin: 10px 0;
+}
+
+.item-card .bonus {
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* おすすめパックの強調 */
+.item-card.recommended {
+    border-color: #ffaa00;
+    box-shadow: 0 0 15px rgba(255, 170, 0, 0.5);
+    background-color: #2e1c00;
+}
+
+/* 購入ボタン */
+.btn-buy {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #cc0000;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-buy:hover {
+    background-color: #ff3333;
+}
+
+/* 法的情報 */
+.legal-info {
+    text-align: left;
+    max-width: 800px;
+    margin: 60px auto 0;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.complete-message {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #00ccff; /* アクセントカラー */
+}
+
+.complete-message h1 {
+    font-size: 32px;
+    color: #4CAF50; /* グリーンで成功を強調 */
+    margin-bottom: 10px;
+}
+
+.complete-message .sub-message {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* 注文詳細エリア */
+.order-details {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.order-details h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffaa00; /* アクセントカラー */
+}
+
+/* 基本詳細ボックス */
+.detail-box {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.detail-box p {
+    padding: 5px 0;
+    border-bottom: 1px dashed #333;
+}
+
+.detail-box p:last-child {
+    border-bottom: none;
+}
+
+.order-id {
+    color: #00ccff; /* IDを強調 */
+    font-weight: bold;
+}
+
+/* アイテムテーブル */
+.item-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.item-table th, .item-table td {
+    padding: 12px;
+    border: 1px solid #333;
+}
+
+.item-table th {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+}
+
+.item-table .align-right {
+    text-align: right;
+}
+
+.item-table tfoot {
+    background-color: #222;
+}
+
+.item-table .total-price {
+    color: #ffaa00;
+    font-size: 20px;
+}
+
+/* 次のステップ/行動を促すエリア */
+.next-action {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.action-buttons {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #cc0000; /* メインCTAカラー */
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #555;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.btn-primary:hover {
+    background-color: #ff3333;
+}
+.btn-secondary:hover {
+    background-color: #666;
+}
+
+
+/* --- 購買意欲を誘発する追加CSS --- */
+
+/* 1. 全体的な目玉のセールメッセージの強調 */
+.sale-now {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffd700; /* ゴールド/イエローで目立つ色 */
+    padding: 15px 0;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* 強い光を出す */
+    background: #440000; /* 濃い赤の背景 */
+    border-radius: 5px;
+    animation: pulse 1.5s infinite; /* 点滅アニメーション */
+}
+
+/* 脈動するアニメーション */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.02); opacity: 0.95; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 2. 価格の強調 */
+.discounted-price {
+    font-size: 36px !important; /* 既存の.priceを上書き */
+    color: #39ff14; /* ネオングリーンで利益を強調 */
+    font-weight: 900 !important;
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
+    display: block;
+    margin: 10px 0;
+}
+
+.original-price {
+    display: block;
+    font-size: 16px;
+    color: #999;
+    text-decoration: line-through; /* 元の価格を打ち消し線で表示 */
+    font-weight: normal;
+}
+
+/* 3. CTAボタンの強調 (全般) */
+.btn-buy {
+    /* 既存のスタイルを強化 */
+    background-color: #ff3333; /* 明るい赤 */
+    font-size: 18px;
+    transition: background-color 0.1s, transform 0.1s;
+    box-shadow: 0 4px #cc0000; /* 立体感を出す影 */
+}
+
+.btn-buy:active {
+    transform: translateY(2px); /* ボタンを押した時の効果 */
+    box-shadow: 0 2px #cc0000;
+}
+
+/* 4. 初回/緊急性の強調 (初回購入限定) */
+.bonus-urgent {
+    color: #ff0000; /* 強力な赤 */
+    font-weight: bold;
+    border: 2px solid #ff0000;
+    padding: 2px 5px;
+    display: inline-block;
+    border-radius: 3px;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+/* 5. 目玉商品（特大パック）の強調 */
+.item-card {
+    position: relative; /* バッジ配置のために必須 */
+}
+
+.super-deal-card {
+    /* 外観を大幅に変更 */
+    background-color: #2a002a; /* 紫系の暗い背景 */
+    border-color: #ff00ff; /* ホットピンクの枠線 */
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.6); /* 強力なグロー効果 */
+    animation: shimmer 2s infinite alternate; /* 微細な光の動き */
+}
+
+/* 枠線の色を微妙に変化させるアニメーション */
+@keyframes shimmer {
+    0% { border-color: #ff00ff; }
+    100% { border-color: #00ffff; } /* シアン系に変化 */
+}
+
+.super-sale-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg); /* 斜めに配置 */
+    background-color: #ff0000; /* 強力な赤のバッジ */
+    color: #fff;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 5;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 特大パックの価格をさらに大きく */
+.super-deal-card .super-price {
+    font-size: 48px !important;
+    color: #00ffff; /* シアン系で高級感を出す */
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+}
+
+/* 特大パックのCTAボタンを緑色に */
+.super-deal-card .super-cta {
+    background-color: #00cc00; /* 決定的な緑色 */
+    box-shadow: 0 6px #009900;
+}
+
+.super-deal-card .super-cta:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px #009900;
+}
+
+.upload-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
