@@ -8,10 +8,22 @@
 
 
 
+:root {
+    --base-font-size: **18px**; /* 16px から 18px に変更 */
+}
+
+/* bodyのfont-sizeに適用 */
 body {
-    font-family: sans-serif; /* 実際のフォントに置き換えます */
-    background-color: #0d0d0d; /* 暗めの背景で重厚感を演出 */
-    color: #f0f0f0; /* 明るいテキストカラー */
+    /* 既存のスタイル */
+    font-family: sans-serif; 
+    background-color: #0d0d0d; 
+    color: #f0f0f0; 
+    font-size: var(--base-font-size); /* CSS変数を適用 */
+}
+
+/* 2. 大サイズクラス */
+.font-large {
+    --base-font-size: **20px**; /* 18px から 20px に変更 */
 }
 
 a {
@@ -502,3 +514,53 @@ ul {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+.purchase-form input[type="text"],
+.purchase-form input[type="file"] {
+    font-size: 1.1rem; /* 親要素の基本サイズの1.1倍 */
+    padding: 12px 15px; /* パディングを大きくして入力欄の高さを出す */
+    margin: 8px 0; /* マージンを調整 */
+    width: 100%; /* 親要素の幅いっぱいに広げる */
+    max-width: 400px; /* 必要に応じて最大幅を設定 */
+    border: 1px solid #555;
+    background-color: #222; /* 背景色を暗くして見やすく */
+    color: #f0f0f0; /* 文字色を白に */
+    border-radius: 4px;
+    display: block; /* input[type="file"] をブロック要素にして幅を適用 */
+}
+
+/* ファイル選択ボタンの調整 */
+.purchase-form input[type="file"] {
+    padding: 15px; /* ファイルボタンの高さをさらに上げる */
+    cursor: pointer;
+}
+
+/* フォーム内のラベル（ラジオボタンの文字など）も大きくする */
+.payment-info label {
+    font-size: 1.1rem; /* ラジオボタン横の文字を大きく */
+    display: block; /* クリックしやすいようにブロック要素化 */
+    margin-bottom: 10px;
+    padding: 5px 0;
+}
+
+/* 購入ボタンの強調 */
+.btn-checkout {
+    font-size: 1.5rem; /* ボタンの文字をさらに大きく */
+    padding: 15px 30px; /* ボタンのサイズを大きく */
+    width: 100%;
+    max-width: 400px; /* 入力欄と合わせて幅を揃える */
+    display: block;
+    margin: 30px auto 20px; /* 中央寄せと上下マージン */
+    background-color: #cc0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-checkout:hover {
+    background-color: #ff3333;
+}
+
