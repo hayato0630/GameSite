@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const itemName = card.dataset.name;
             const itemPrice = card.dataset.price;
 
+			
             // 取得したデータをURLのクエリパラメータとして整形
             // 例: ?id=stone_l&name=魔法石パック%20(特大)&price=5800
             const queryString = new URLSearchParams({
