@@ -120,7 +120,7 @@ public class GameServlet extends HttpServlet {
                     break;
                 case "pass_v1":
                     itemName = "先生の全知識";
-                    itemPriceStr = "1500";
+                    itemPriceStr = "400000";
                     break;
                 default:
                     // itemIdがnullまたは一致しない場合の処理

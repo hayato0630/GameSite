@@ -49,7 +49,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ご注文確定 | 【幻想世界域】</title>
+    <title>ご注文確定 | 【広島情報龍伝記】</title>
     <link rel="stylesheet" href="dezain_n.css">
 </head>
 <body>
@@ -61,7 +61,7 @@
         <section class="section complete-message">
             <h1>✅ ご注文が確定しました。ありがとうございます！</h1>
             <p class="sub-message">ご購入いただいたアイテムは、ゲーム内に即時反映されます。</p>
-            <p>引き続き【幻想世界域】をお楽しみください！</p>
+            <p>引き続き【広島情報龍伝記】をお楽しみください！</p>
         </section>
 
         <section class="section order-details">
