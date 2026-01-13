@@ -515,19 +515,76 @@ ul {
     border-radius: 5px;
 }
 
+.card-details {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    
+    /* 追加: 中央寄せの設定 */
+    max-width: 400px;    /* 入力欄の最大幅に合わせる */
+    margin-left: auto;   /* 左マージン自動 */
+    margin-right: auto;  /* 右マージン自動 */
+    text-align: left;    /* 中の文字は左揃えに戻す（見栄えのため） */
+}
+
+/* ファイル選択欄を囲うための新しいクラス */
+.upload-container {
+    max-width: 400px;
+    margin: 20px auto;   /* 上下20px、左右中央 */
+    text-align: left;
+}
+
+/* input要素自体のマージンを調整して中央に配置 */
 .purchase-form input[type="text"],
 .purchase-form input[type="file"] {
-    font-size: 1.1rem; /* 親要素の基本サイズの1.1倍 */
-    padding: 12px 15px; /* パディングを大きくして入力欄の高さを出す */
-    margin: 8px 0; /* マージンを調整 */
-    width: 100%; /* 親要素の幅いっぱいに広げる */
-    max-width: 400px; /* 必要に応じて最大幅を設定 */
+    font-size: 1.1rem;
+    padding: 12px 15px;
+    margin: 8px auto;    /* margin-bottom だけでなく左右をautoに */
+    width: 100%;
+    max-width: 400px;
     border: 1px solid #555;
-    background-color: #222; /* 背景色を暗くして見やすく */
-    color: #f0f0f0; /* 文字色を白に */
+    background-color: #222;
+    color: #f0f0f0;
     border-radius: 4px;
-    display: block; /* input[type="file"] をブロック要素にして幅を適用 */
+    display: block;      /* これによりmargin: autoが効くようになります */
 }
+
+/* ファイル選択ボタンの調整 */
+.purchase-form input[type="file"] {
+    padding: 15px; /* ファイルボタンの高さをさらに上げる */
+    cursor: pointer;
+}
+
+/* フォーム内のラベル（ラジオボタンの文字など）も大きくする */
+.payment-info label {
+    font-size: 1.1rem; /* ラジオボタン横の文字を大きく */
+    display: block; /* クリックしやすいようにブロック要素化 */
+    margin-bottom: 10px;
+    padding: 5px 0;
+}
+
+/* 購入ボタンの強調 */
+.btn-checkout {
+    font-size: 1.5rem; /* ボタンの文字をさらに大きく */
+    padding: 15px 30px; /* ボタンのサイズを大きく */
+    width: 100%;
+    max-width: 400px; /* 入力欄と合わせて幅を揃える */
+    display: block;
+    margin: 30px auto 20px; /* 中央寄せと上下マージン */
+    background-color: #cc0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-checkout:hover {
+    background-color: #ff3333;
+}
+
 
 /* ファイル選択ボタンの調整 */
 .purchase-form input[type="file"] {

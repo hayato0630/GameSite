@@ -118,6 +118,30 @@ public class GameServlet extends HttpServlet {
                     itemName = "クロスサイトスクリプティング";
                     itemPriceStr = "2900";
                     break;
+                case "stone_y":
+                    itemName = "宮崎先生・ムキムキパワー";
+                    itemPriceStr = "50000";
+                    break;
+                case "stone_u":
+                    itemName = "内海先生・コツコツパワー";
+                    itemPriceStr = "50000";
+                    break;
+                case "stone_st":
+                    itemName = "佐藤先生・ゲームスキル";
+                    itemPriceStr = "100000";
+                    break;
+                case "stone_ino":
+                    itemName = "井上先生・歌唱力";
+                    itemPriceStr = "50000";
+                    break;
+                case "stone_f":
+                    itemName = "福谷先生・デザインスキル";
+                    itemPriceStr = "50000";
+                    break;
+                case "stone_i":
+                    itemName = "井原先生・JOHO愛";
+                    itemPriceStr = "100000";
+                    break;
                 case "pass_v1":
                     itemName = "先生の全知識";
                     itemPriceStr = "400000";

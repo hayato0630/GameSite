@@ -66,7 +66,7 @@
                     <div class="form-section upload-section">
     					<div class="form-section upload-section">
    						 <h3>画像のアップロード</h3>
-
+						<p>本人確認のため、運転免許証もしくはマイナンバーカードの画像をアップロードしてください。</p>
     					<p>表面の画像をアップロードしてください。</p>
     					<input type="file" name="upload_image_front" accept="image/*" required>
 
