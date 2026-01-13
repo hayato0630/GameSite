@@ -100,6 +100,7 @@ public class GameServlet extends HttpServlet {
             // ★★★ 修正箇所: JSPに渡すデータを用意する (IDに応じて動的に変更) ★★★
             // --------------------------------------------------------------------------------
             
+            
             String itemName = "不明なアイテム";
             String itemPriceStr = "0";
             
